@@ -54,8 +54,8 @@ self.addEventListener('fetch', (event) => {
 // Evento de push
 self.addEventListener("push", (event) => {
   let data = {
-    title: "Nuevas colecciones",
-    body: "¡Nueva colección de primavera disponible! Descubre las tendencias que están marcando la moda. 🌷",
+    title: "La biblioteca es el hogar del conocimiento.",
+    body: "¡Los libros son puertas a mundos llenos de conocimiento e imaginación.",
   };
 
   if (event.data) {
