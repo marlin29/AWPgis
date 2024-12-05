@@ -48,7 +48,7 @@ navigator.serviceWorker.register('/firebase-messaging-sw.js')
     console.log('Service Worker registrado correctamente:', registration);
 
     // Obtén el token de Firebase Messaging
-    getToken(messaging, { vapidKey: 'BGvxRdsdfnqOKKjJCOnLNe6Fc7xJdn9pxhXnxOKJNWyuzOGsyH9715HfZlP254QaIxm4VpKpYI4AjvgeUjbWYtY', serviceWorkerRegistration: registration })
+    getToken(messaging, { vapidKey: 'BNCEAv2jacEWUbGy8nhmyMlt3yFBadXTR99Zf43R415105ot-CXlN3Vmjuc21xSQG5ell6WB2h_zKZXmiwoJ33E', serviceWorkerRegistration: registration })
       .then((currentToken) => {
         if (currentToken) {
           console.log('Token de registro obtenido:', currentToken);
