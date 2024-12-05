@@ -54,8 +54,8 @@ self.addEventListener('fetch', (event) => {
 // Evento de push
 self.addEventListener("push", (event) => {
   let data = {
-    title: "La biblioteca es el hogar del conocimiento.",
-    body: "¡Los libros son puertas a mundos llenos de conocimiento e imaginación.",
+    title: "Bienvenido",
+    body: "¡La biblioteca es el hogar del conocimiento.",
   };
 
   if (event.data) {
