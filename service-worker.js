@@ -52,26 +52,32 @@ self.addEventListener('fetch', (event) => {
 });
 
 // Evento de push
-self.addEventListener('push', (event) => {
-  let data = {};
+self.addEventListener("push", (event) => {
+  let data = {
+    title: "Nuevas colecciones",
+    body: "¡Nueva colección de primavera disponible! Descubre las tendencias que están marcando la moda. 🌷",
+  };
 
   if (event.data) {
-    data = event.data.json();
-  } else {
-    data = { title: 'Notificación', body: '¡Nueva notificación!' };
+    try {
+      const eventData = event.data.json();
+      data.title = eventData.title || data.title;
+      data.body = eventData.body || data.body;
+    } catch (e) {
+      console.error("Error procesando los datos de la notificación:", e);
+    }
   }
+
+  console.log("Datos del evento push:", data);
 
   const options = {
     body: data.body,
-    icon: 'img/icon-192x192.png',
-    badge: 'img/icon-192x192.jpg',
+    icon: "assets/img/logo.jpg",
+    badge: "assets/img/logo.jpg",
   };
 
-  event.waitUntil(
-    self.registration.showNotification(data.title, options)
-  );
+  event.waitUntil(self.registration.showNotification(data.title, options));
 });
-
 // Evento de clic en notificación
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
